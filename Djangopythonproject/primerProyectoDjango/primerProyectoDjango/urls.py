@@ -16,11 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from webapp.views import bienvenido
+from deportes.views import pedirDeportes, listaDatosEquipo
+from webapp.views import listaDatos
+
+#from webapp.views import bienvenido
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('welcome/', bienvenido),
+    #path('',bienvenido),
+    #path('welcome/', bienvenido),
+    path('deporte/', pedirDeportes, name="deporte"),
     #path('chao/', despedida)
+    path('deporte/lista/', listaDatosEquipo, name="listado_equipos")
 ]
 

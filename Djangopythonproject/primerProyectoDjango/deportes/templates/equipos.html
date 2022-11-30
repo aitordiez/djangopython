@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Equipos</title>
+</head>
+<body>
+    <fieldset>
+        <label>Buscar: <input type="text" name="continente" list="continentes"/>
+            <datalist id="continentes">
+                    {% for continente in listado_equipos %}
+                     <option value="{{continente.continente}}"></option>
+                    {% endfor %}
+            </datalist>
+        </label>
+    </fieldset>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Seleccion</th>
+                <th>Numero_mundiales</th>
+                <th>Continente</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for equipo in listado_equipos %}
+                <tr>
+                    <td>{{equipo.seleccion}}</td>
+                    <td>{{equipo.numero_mundiales}}</td>
+                    <td>{{equipo.continente}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
